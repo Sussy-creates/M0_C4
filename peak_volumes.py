@@ -1,7 +1,20 @@
 # M0_C4 - Peak Volumes
 
 def get_peak_volumes(volumes):
-    # Write your code here
+    
+    output = []
+    y = -72
+    for x in volumes:
+        if x < -72:
+            y = '-Inf'
+        elif x > 10:
+            y = 'CLIP'
+        elif y == 'CLIP' or y == '-Inf':
+            y = x
+        elif x > y:
+            y = x
+        output.append(y)
+    return output
     return "not implemented"
 
 #### DO NOT TOUCH CODE BELOW THIS LINE ####
