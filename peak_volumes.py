@@ -2,19 +2,19 @@
 
 def get_peak_volumes(volumes):
     
-    output = []
-    y = -72
-    for x in volumes:
-        if x < -72:
-            y = '-Inf'
-        elif x > 10:
-            y = 'CLIP'
-        elif y == 'CLIP' or y == '-Inf':
-            y = x
-        elif x > y:
-            y = x
-        output.append(y)
-    return output
+    peaks = []
+    peak  = -73
+    for volume in volumes:
+        if volume < -72:
+            peak = '-Inf'
+        elif volume > 10:
+            peak = 'CLIP'
+        elif peak == 'CLIP' or peak == '-Inf':
+            peak = volume
+        elif volume > peak:
+            peak = volume
+        peaks.append(peak)
+    return peaks
     return "not implemented"
 
 #### DO NOT TOUCH CODE BELOW THIS LINE ####
